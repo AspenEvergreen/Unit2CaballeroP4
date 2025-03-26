@@ -22,7 +22,7 @@ public class DestroyOutOfBounds : MonoBehaviour
         }
         else if (transform.position.z < LB)
         {
-            Debug.Log("Game Over!");
+            //Debug.Log("Game Over !!!");
             Destroy(gameObject);
         }
     }
