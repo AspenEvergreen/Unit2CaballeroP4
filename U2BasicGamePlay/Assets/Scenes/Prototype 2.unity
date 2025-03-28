@@ -240,27 +240,8 @@ MonoBehaviour:
   zRangeTop: 15
   zRangeBottom: 0
   projectilePrefab: {fileID: 75783385325440772, guid: 41e3c82dc8896824d92903454d9b963f, type: 3}
---- !u!65 &217185000
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 217184996}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1.5122694, z: 1}
-  m_Center: {x: 0, y: 2.4739792, z: 0}
+  lives: 3
+  spawnManager: {fileID: 0}
 --- !u!1001 &266556901
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -320,9 +301,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100046, guid: f8abbdd178867d2419ba9feb6ff2cba0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 217184997}
-    - targetCorrespondingSourceObject: {fileID: 100046, guid: f8abbdd178867d2419ba9feb6ff2cba0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 217185000}
   m_SourcePrefab: {fileID: 100100000, guid: f8abbdd178867d2419ba9feb6ff2cba0, type: 3}
 --- !u!1 &425805626
 GameObject:
@@ -616,6 +594,7 @@ MonoBehaviour:
   - {fileID: 2441422403190177446, guid: 7ec2d3722b7d82141899dc87cd082f81, type: 3}
   - {fileID: 8874223158925664357, guid: 24d8809a6ef90184a93c096f08286aa8, type: 3}
   animalIndex: 1
+  IsSpawning: 1
 --- !u!4 &887532826
 Transform:
   m_ObjectHideFlags: 0

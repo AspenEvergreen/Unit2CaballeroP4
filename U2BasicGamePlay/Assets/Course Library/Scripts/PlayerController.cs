@@ -17,11 +17,18 @@ public class PlayerController : MonoBehaviour
     //projectile
     public GameObject projectilePrefab;
 
+    //lives
+    public int lives = 3;
+    private Vector3 respawnPosition = Vector3.zero;
+
+    public SpawnManager spawnManager;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        spawnManager = GetComponent<SpawnManager>();
     }
+
 
     // Update is called once per frame
     void Update()
@@ -65,10 +72,30 @@ public class PlayerController : MonoBehaviour
         {
             Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
         }
+    }
 
-        //if (gameObject.name == ("Player" is Destroy))
-        //{
-        //    Debug.Log("Game Over");
-        //}
+    // respawn
+    private void Respawn()
+    {
+        transform.position = respawnPosition;
+    }
+
+    private void GameOver()
+    {
+        Debug.Log("Game Over !");
+        spawnManager.IsSpawning = false;
+    }
+
+    public void loselife()
+    {
+        lives--;
+        if (lives > 0)
+        {
+            Respawn();
+        }
+        else
+        {
+            GameOver();
+        }
     }
 }
