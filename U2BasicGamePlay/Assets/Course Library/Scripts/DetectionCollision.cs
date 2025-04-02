@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class DetectionCollision : MonoBehaviour
 {
-    private PlayerController playerController;
+    private PlayerController PlayerController;
 
     // Start is called before the first frame update
     void Start()
     {
-        playerController = GameObject.Find("player").GetComponent<PlayerController>();
+        PlayerController = GameObject.Find("player").GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
@@ -28,7 +28,6 @@ public class DetectionCollision : MonoBehaviour
         }
         if (gameObject.CompareTag("player") && other.gameObject.CompareTag("Animal"))
         {
-            playerController.loselife();
             Destroy(other.gameObject);
         }
     }
