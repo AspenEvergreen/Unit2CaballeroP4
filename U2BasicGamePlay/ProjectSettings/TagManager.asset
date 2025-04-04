@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Animal
   - weapon
-  - player
   layers:
   - Default
   - TransparentFX

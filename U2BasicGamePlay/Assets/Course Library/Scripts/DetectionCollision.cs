@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class DetectionCollision : MonoBehaviour
 {
-    private PlayerController PlayerController;
+    private GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        PlayerController = GameObject.Find("player").GetComponent<PlayerController>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -19,15 +19,17 @@ public class DetectionCollision : MonoBehaviour
        
     }
 
-    void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (gameObject.CompareTag("weapon") && other.gameObject.CompareTag("Animal"))
+        if (other.CompareTag("Player"))
         {
+            gameManager.AddLives(-1);
             Destroy(gameObject);
-            Destroy(other.gameObject);
         }
-        if (gameObject.CompareTag("player") && other.gameObject.CompareTag("Animal"))
+        else if (other.CompareTag("Animal"))
         {
+            gameManager.AddScore(5);
+            Destroy(gameObject);
             Destroy(other.gameObject);
         }
     }
