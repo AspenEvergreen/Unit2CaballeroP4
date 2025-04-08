@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
 
     //projectile
     public GameObject projectilePrefab;
+    public Transform projectileSpawnPoint;
 
     // Start is called before the first frame update
     void Start()
@@ -63,7 +64,7 @@ public class PlayerController : MonoBehaviour
         // launch projectiles from player
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+            Instantiate(projectilePrefab, projectileSpawnPoint.position, projectilePrefab.transform.rotation);
         }
     }
 }

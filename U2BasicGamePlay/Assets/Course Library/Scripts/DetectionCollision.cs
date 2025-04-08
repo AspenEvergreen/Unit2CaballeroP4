@@ -24,13 +24,13 @@ public class DetectionCollision : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             gameManager.AddLives(-1);
-            Destroy(gameObject);
         }
         else if (other.CompareTag("Animal"))
         {
             gameManager.AddScore(5);
-            Destroy(gameObject);
+            
             Destroy(other.gameObject);
         }
+        
     }
 }
